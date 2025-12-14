@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>مؤسسة مظلة</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zain:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        header {
+            background: rgba(41, 42, 43, 0.26);
+            position: absolute;
+            width: 100%;
+            z-index: 999;
+            box-shadow: none;
+        }
+
+        header .logo img {
+            height: 100px;
+        }
+
+        nav ul i,
+        nav ul a {
+            color: #9E93B1;
+        }
+
+        nav ul li.active a,
+        nav ul li.active i,
+        nav ul li:hover i,
+        nav ul li:hover a {
+            color: #FFF;
+        }
+
+        header .contact-btn a {
+            color: #2C2459;
+            background-color: #FFF;
+        }
+
+        header .open-icon i,
+        header .close-icon i {
+            color: #FFF;
+        }
+
+        .media-menu {
+            border-radius: 3px;
+            background: linear-gradient(0deg, rgba(44, 36, 89, 0.10) 0%, rgba(44, 36, 89, 0.10) 100%), rgba(41, 42, 43, 0.29);
+            box-shadow: 0px 4px 60px 30px rgba(0, 0, 0, 0.10);
+        }
+
+        .media-menu li a {
+            color: #FFF;
+        }
+
+        .media-menu li:hover {
+            background-color: #FFF;
+        }
+
+        .media-menu li:hover a {
+            color: #2C2459;
+        }
+
+        @media (max-width:992px) {
+            nav.active {
+                background-color: #2C2459;
+                border-right: 1px solid #9E93B1;
+            }
+        }
+
+        .swiper {
+            width: 100%;
+        }
+
+        .home .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .home .swiper-pagination {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 10px;
+            margin-right: 80px;
+        }
+
+        .home .swiper-pagination-bullet {
+            background-color: #fff;
+            opacity: 1;
+        }
+
+        .home .swiper-pagination-bullet-active {
+            position: relative;
+            background-color: #2c2459;
+        }
+
+        .home .swiper-pagination-bullet-active::after {
+            content: "";
+            position: absolute;
+            border: 2px solid #2c2459;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container d-flex align-items-center justify-content-between gap-5">
+            <div class="logo">
+                <a href="#">
+                    <img src="image/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="open-icon d-block d-lg-none">
+                <i class="fa-solid fa-bars fs-2 ms-4"></i>
+            </div>
+            <nav class="d-none d-lg-flex gap-5 justify-content-center">
+                <div class="close-icon d-block d-lg-none position-absolute top-0 end-0 p-4">
+                    <i class="fa-solid fa-xmark fs-2"></i>
+                </div>
+                <ul class="d-flex align-items-center p-0 gap-4 gap-lg-3 gap-xl-5 text-nowrap flex-column flex-lg-row">
+                    <li class="active"><a href="index.html" class="fs-18 fw-bold">الرئيسية</a></li>
+                    <li><a href="who.html" class="fs-18 fw-bold">عن المؤسسة</a></li>
+                    <li><a href="program.html" class="fs-18 fw-bold">البرامج</a></li>
+                    <li><a href="project.html" class="fs-18 fw-bold">المشاريع</a></li>
+                    <li class="media position-relative"><a href="#" class="fs-18 fw-bold">الإعلام</a>
+                        <i class="fa-solid fa-chevron-down fs-16"></i>
+                        <ul class="media-menu position-absolute p-0 d-flex flex-column gap-4 text-center py-3">
+                            <li><a href="news.html" class="fs-18 fw-bold">الأخبار</a></li>
+                            <li><a href="blogger.html" class="fs-18 fw-bold">المدونة</a></li>
+                            <li><a href="events.html" class="fs-18 fw-bold">الفعاليات</a></li>
+                            <li><a href="podcasts.html" class="fs-18 fw-bold">البودكاست</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="fs-18 fw-bold">حاضنة ساندبوكس</a></li>
+                    <li><a href="#" class="fs-18 fw-bold">EN</a></li>
+                </ul>
+                <div class="contact-btn text-nowrap ">
+                    <a href="contact.html" class="fs-18 fw-bold">تواصل معنا</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="home">
+
+            <div class="swiper mySwiper-home h-100">
+                <div
+                    class="hero-text position-absolute top-50 start-50 translate-middle w-100 h-100 d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                        <h5 class="text-white position-relative mb-3 fw-bolder fs-64 mx-auto">تقنية وريادة</h5>
+                        <p class="text-white mb-5 fs-20">مؤسسة مظلة هي منظمة محلية غير ربحية متخصصة في تمكين المشاريع
+                            والشباب
+                            في
+                            اليمن بالاستعانة
+                            بالتقنية
+                            وريادة الأعمال</p>
+                        <a href="#" class="d-inline-block fs-18 medalah-text-color bg-white">أعرف أكثر</a>
+                    </div>
+                </div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="image/header01.jpg" alt="" class="w-100">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="image/header02.jpg" alt="" class="w-100">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="image/header03.jpg" alt="" class="w-100">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </section>
+        <section class="section programs">
+            <div class="container">
+                <h4 class="text-center mb-5 fs-40 fw-bold medalah-text-color">Programs</h4>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 mt-4">
+                        <a href="#">
+                            <div class="card gap-3 h-100">
+                                <img src="image/program-1.png" class="card-img-top" alt="...">
+                                <div class="card-body mt-auto flex-grow-0 p-0">
+                                    <h6 class="fs-22 fw-bolder medalah-text-color text-center">Capacity Building Program
+                                    </h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mt-4">
+                        <a href="#">
+                            <div class="card gap-3 h-100">
+                                <img src="image/program-2.png" class="card-img-top" alt="...">
+                                <div class="card-body mt-auto flex-grow-0 p-0">
+                                    <h6 class="fs-22 fw-bolder medalah-text-color text-center">Innovation Program</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mt-4">
+                        <a href="#">
+                            <div class="card gap-3 h-100">
+                                <img src="image/program-3.png" class="card-img-top" alt="...">
+                                <div class="card-body mt-auto flex-grow-0 p-0">
+                                    <h6 class="fs-22 fw-bolder medalah-text-color text-center">Entrepreneurship Program
+                                    </h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="section news">
+            <div class="container">
+                <h4 class="text-center mb-5 fs-40 fw-bold medalah-text-color">الأخبار</h4>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 mt-4">
+                        <a href="newsShow.html">
+                            <div class="box position-relative">
+                                <img src="image/news01.jpg" alt="" class="w-100 news-img">
+                                <div class="image-info position-absolute bottom-0 w-100">
+                                    <p class="text-white mb-2">حاضنة SANDBOX ........تُمكّن 54 رائد أعمال من إطلاق
+                                        قنواتهم
+                                    </p>
+                                    <div class="d-flex align-items-center">
+                                        <img src="image/calender-white.svg" alt="" class="calender ms-2">
+                                        <time datetime="" class="text-white">10 يونيو 2024</time>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mt-4">
+                        <a href="#">
+                            <div class="box position-relative">
+                                <img src="image/news02.jpg" alt="" class="w-100 news-img">
+                                <div class="image-info position-absolute bottom-0 w-100">
+                                    <p class="text-white mb-2">حاضنة SANDBOX </p>
+                                    <div class="d-flex align-items-center">
+                                        <img src="image/calender-white.svg" alt="" class="calender ms-2">
+                                        <time datetime="" class="text-white">10 يونيو 2024</time>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mt-4">
+                        <a href="#">
+                            <div class="box position-relative">
+                                <img src="image/news03.jpg" alt="" class="w-100 news-img">
+                                <div class="image-info position-absolute bottom-0 w-100">
+                                    <p class="text-white mb-2"> حاضنة SANDBOX تُمكّن 54 رائد أعمال من إطلاق قنواتهم</p>
+                                    <div class="d-flex align-items-center">
+                                        <img src="image/calender-white.svg" alt="" class="calender ms-2">
+                                        <time datetime="" class="text-white">10 يونيو 2024</time>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="news.html" class="more-btn text-white d-block mt-5 mx-auto fs-18 fw-bold medalah-bg-color">المزيد</a>
+            </div>
+        </section>
+        <section class="section events">
+            <div class="container">
+                <h4 class="text-center mb-5 fs-40 fw-bold medalah-text-color">الفعاليات</h4>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 mt-4">
+                        <div class="box d-flex flex-column h-100">
+                            <a href="#">
+                                <img src="image/event02.jpg" alt="" class="events-img w-100">
+                            </a>
+                            <div class="image-info w-100 d-flex flex-column flex-grow-1">
+                                <span class="event bg-white fs-16 fw-normal medalah-text-color">فعالية</span>
+                                <h5 class="text-white mt-3 mb-auto fs-18 fw-bold">دورة الإنتاج الفنيmkmklmkdsml دورة
+                                    الإنتاج الفني
+                                </h5>
+                                <div class="events-info d-flex align-items-center gap-2 my-2">
+                                    <img src="image/person.jpg" alt="" class="info-img">
+                                    <h6 class="text-white fs-16 fw-normal">سالم النجار</h6>
+                                </div>
+                                <div class="d-flex gap-5">
+                                    <div class="date d-flex align-items-center">
+                                        <img src="image/calender-white.svg" alt="" class="calender ms-2">
+                                        <time datetime="" class="text-white">10 يونيو 2024</time>
+                                    </div>
+                                    <div class="time d-flex align-items-center">
+                                        <img src="image/clock-white.svg" alt="" class="ms-2">
+                                        <span class="text-white">4:00 - 7:00 مساءًا</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mt-4">
+                        <div class="box d-flex flex-column h-100">
+                            <a href="#">
+                                <img src="image/event01.jpg" alt="" class="events-img w-100">
+                            </a>
+                            <div class="image-info w-100 d-flex flex-column flex-grow-1">
+                                <span class="event bg-white fs-16 fw-normal medalah-text-color">فعالية</span>
+                                <h5 class="text-white mt-3 mb-auto fs-18 fw-bold">دورة الإنتاج الفني</h5>
+                                <div class="events-info d-flex align-items-center gap-2 my-2">
+                                    <img src="image/person.jpg" alt="" class="info-img">
+                                    <h6 class="text-white fs-16 fw-normal">سالم النجار</h6>
+                                </div>
+                                <div class="d-flex gap-5">
+                                    <div class="date d-flex align-items-center">
+                                        <img src="image/calender-white.svg" alt="" class="calender ms-2">
+                                        <time datetime="" class="text-white">10 يونيو 2024</time>
+                                    </div>
+                                    <div class="time d-flex align-items-center">
+                                        <img src="image/clock-white.svg" alt="" class="ms-2">
+                                        <span class="text-white">4:00 - 7:00 مساءًا</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mt-4">
+                        <div class="box d-flex flex-column h-100">
+                            <a href="#">
+                                <img src="image/event01.jpg" alt="" class="events-img w-100">
+                            </a>
+                            <div class="image-info w-100 d-flex flex-column flex-grow-1">
+                                <span class="event bg-white fs-16 fw-normal medalah-text-color">فعالية</span>
+                                <h5 class="text-white mt-3 mb-auto fs-18 fw-bold">دورة الإنتاج الفني</h5>
+                                <div class="events-info d-flex align-items-center gap-2 my-2">
+                                    <img src="image/person.jpg" alt="" class="info-img">
+                                    <h6 class="text-white fs-16 fw-normal">سالم النجار</h6>
+                                </div>
+                                <div class="d-flex gap-5">
+                                    <div class="date d-flex align-items-center">
+                                        <img src="image/calender-white.svg" alt="" class="calender ms-2">
+                                        <time datetime="" class="text-white">10 يونيو 2024</time>
+                                    </div>
+                                    <div class="time d-flex align-items-center">
+                                        <img src="image/clock-white.svg" alt="" class="ms-2">
+                                        <span class="text-white">4:00 - 7:00 مساءًا</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <a href="events.html" class="more-btn text-white d-block mt-5 mx-auto fs-18 fw-bold medalah-bg-color">المزيد</a>
+            </div>
+        </section>
+        <section class="section projects-section projects">
+            <h4 class="text-center mb-5 fs-40 fw-bold medalah-text-color">البرامج والمشاريع</h4>
+            <div class="container position-relative">
+                <div class="swiper mySwiper-project">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide h-auto">
+                            <a href="#" class="h-100">
+                                <div class="card h-100">
+                                    <img src="image/project01.png" class="card-img-top project-img" alt="...">
+                                    <div class="card-body mt-auto flex-grow-0 pt-0">
+                                        <h6 class="fs-22 fw-bolder medalah-text-color text-center">مجتمعات مظلة</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <a href="#" class="h-100">
+                                <div class="card h-100">
+                                    <img src="image/project03.png" class="card-img-top project-img" alt="...">
+                                    <div class="card-body mt-auto flex-grow-0 pt-0">
+                                        <h6 class="fs-22 fw-bolder medalah-text-color text-center">مجتمعات مظلة</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <a href="#" class="h-100">
+                                <div class="card h-100">
+                                    <img src="image/project02.png" class="card-img-top project-img" alt="...">
+                                    <div class="card-body mt-auto flex-grow-0 pt-0">
+                                        <h6 class="fs-22 fw-bolder medalah-text-color text-center">مجتمعات مظلة
+                                        </h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <a href="#" class="h-100">
+                                <div class="card h-100">
+                                    <img src="image/project04.png" class="card-img-top project-img" alt="...">
+                                    <div class="card-body mt-auto flex-grow-0 pt-0">
+                                        <h6 class="fs-22 fw-bolder medalah-text-color text-center">مجتمعات مظلة</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide h-auto">
+                            <a href="#" class="h-100">
+                                <div class="card h-100">
+                                    <img src="image/project05.jpg" class="card-img-top project-img" alt="...">
+                                    <div class="card-body mt-auto flex-grow-0 pt-0">
+                                        <h6 class="fs-22 fw-bolder medalah-text-color text-center">مجتمعات مظلة</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="navigation">
+                    <div class="swiper-button-next medalah-text-color position-absolute top-50 mt-0">
+                        <img src="image/btn-next.svg" alt="">
+                    </div>
+                    <div class="swiper-button-prev medalah-text-color position-absolute top-50 mt-0">
+                        <img src="image/btn-prev.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section publications">
+            <div class="container position-relative mb-5">
+                <h4 class="text-center mb-5 mt-5 pb-3 fs-40 fw-bold medalah-text-color">Publications</h4>
+                <div class="public-card position-relative p-0 p-md-5">
+                    <div class="swiper mySwiper-publications">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card mb-3 border-0 px-0 px-lg-5 mx-3">
+                                    <div class="row g-0 align-items-center gap-4">
+                                        <div class="col-12 col-md-4 text-center">
+                                            <img src="image/publications.png" class="img-fluid rounded-start" alt="">
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <div class="card-body">
+                                                <h5 class="card-title medalah-text-color fs-30 fw-bold mb-3">Sandbox:
+                                                    Launch
+                                                    Your Idea to Shape
+                                                    the Future
+                                                </h5>
+                                                <p class="card-text fs-18 fw-normal">Sandbox, under the umbrella of
+                                                    Muthalla, is
+                                                    a local
+                                                    non-profit organization dedicated to empowering projects and youth
+                                                    in Yemen through technology and entrepreneurship..</p>
+                                                <a href="#"
+                                                    class="more-btn text-white d-block mt-5 fs-18 fw-bold medalah-bg-color">See
+                                                    More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card mb-3 border-0 px-0 px-lg-5 mx-3">
+                                    <div class="row g-0 align-items-center gap-4">
+                                        <div class="col-12 col-md-4 text-center">
+                                            <img src="image/project01.png" class="img-fluid rounded-start" alt="">
+                                        </div>
+                                        <div class="col-12 col-md-6">
+                                            <div class="card-body">
+                                                <h5 class="card-title medalah-text-color fs-30 fw-bold mb-3">Sandbox:
+                                                    Launch
+                                                    Your Idea to Shape
+                                                    the Future
+                                                </h5>
+                                                <p class="card-text fs-18 fw-normal">Sandbox, under the umbrella of
+                                                    Muthalla, is
+                                                    a local
+                                                    non-profit organization dedicated to empowering projects and youth
+                                                    in Yemen through technology and entrepreneurship..</p>
+                                                <a href="#"
+                                                    class="more-btn text-white d-block mt-5 fs-18 fw-bold medalah-bg-color">See
+                                                    More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navigation pb-4 pb-md-0">
+                        <div class="swiper-button-next medalah-text-color position-absolute top-50 mt-0">
+                            <img src="image/btn-next.svg" alt="">
+                        </div>
+                        <div class="swiper-button-prev medalah-text-color position-absolute top-50 mt-0">
+                            <img src="image/btn-prev.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section partners">
+            <h4 class="text-center mb-5  fs-40 fw-bold medalah-text-color">الشركاء</h4>
+            <div class="container mb-5 overflow-hidden">
+                <div class="swiper mySwiper-partners">
+                    <div class="swiper-wrapper align-items-center">
+                        <div class="swiper-slide "><a href="#"><img src="image/partners01.png" alt=""></a></div>
+                        <div class="swiper-slide "><a href="#"><img src="image/partners02.png" alt=""></a></div>
+                        <div class="swiper-slide "><a href="#"><img src="image/partners03.png" alt=""></a></div>
+                        <div class="swiper-slide "><a href="#"><img src="image/partners04.png" alt=""></a></div>
+                        <div class="swiper-slide "><a href="#"><img src="image/partners05.png" alt=""></a></div>
+                        <div class="swiper-slide "><a href="#"><img src="image/partners06.png" alt=""></a></div>
+                        <div class="swiper-slide "><a href="#"><img src="image/partners07.png" alt=""></a></div>
+                        <div class="swiper-slide "><a href="#"><img src="image/partners08.png" alt=""></a></div>
+                        <div class="swiper-slide "><a href="#"><img src="image/partners09.png" alt=""></a></div>
+                        <div class="swiper-slide "><a href="#"><img src="image/partners10.png" alt=""></a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="py-5 text-center overflow-hidden medalah-bg-color">
+        <div class="container">
+            <img src="image/logo.png" alt="شعار مظلة" class="text-white mt-4">
+            <div class="footer-links d-flex flex-column flex-lg-row justify-content-center gap-5 mt-3 mb-4 text-nowrap">
+                <a href="index.html" class="fs-16 fw-bold text-white">الرئيسية</a>
+                <a href="who.html" class="fs-16 fw-bold text-white">عن المؤسسة</a>
+                <a href="program.html" class="fs-16 fw-bold text-white">البرامج</a>
+                <a href="project.html" class="fs-16 fw-bold text-white">المشاريع</a>
+                <a href="contact.html" class="fs-16 fw-bold text-white">تواصل معنا</a>
+                <a href="privacy.html" class="fs-16 fw-bold text-white">سياسة الخصوصية</a>
+                <a href="userAgreement.html" class="fs-16 fw-bold text-white">إتفاقية المستخدم</a>
+            </div>
+            <div class="footer-icon d-flex justify-content-center gap-2 mb-5">
+                <a href="#"><img src="image/linkedin_white.svg" alt=""></a>
+                <a href="#"><img src="image/threads_white.svg" alt=""></a>
+                <a href="#"><img src="image/youtube_white.svg" alt=""></a>
+                <a href="#"><img src="image/x(twiter)_white.svg" alt=""></a>
+                <a href="#"><img src="image/instagram_white.svg" alt=""></a>
+                <a href="#"><img src="image/facebook_white.svg" alt=""></a>
+            </div>
+            <div class="you-icon mb-5">
+                <a href="#">
+                    <img src="image/youicon.png" alt="">
+                    <h5 class="fs-14 fw-normal text-white">تصميم وتطوير</h5>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+
+</body>
+
+</html>
